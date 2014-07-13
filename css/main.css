@@ -51,11 +51,49 @@ textarea {
    ========================================================================== */
 body {
   font-size: 18px;
-  font-family: "chaparral-pro", Georgia, Times, sans-serif;
+  font-family: "chaparral-pro", Georgia, Times, serif;
   line-height: 1.5em;
 }
+#nav-primary {
+  text-align: center;
+}
+#nav-primary h1 {
+  width: 3em;
+  height: 3em;
+  background: #DDD;
+  border-radius: 5em;
+  margin: 1em auto;
+  position: relative;
+}
+#nav-primary h1 a {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-indent: -999em;
+}
+#nav-primary ul {
+  padding: 0;
+}
+#nav-primary li {
+  display: inline;
+  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+#nav-primary li a {
+  color: #000;
+  text-decoration: none;
+  padding: 0.25em;
+}
+#nav-primary li a:hover {
+  color: #f04a2d;
+}
 main {
-  width: 35em;
+  width: 80%;
+  max-width: 35em;
   margin: 3em auto;
   text-align: justify;
 }
