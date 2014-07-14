@@ -82,37 +82,59 @@ body {
     border-radius: 5em;
     margin: 1em auto;
     position: relative;
+    overflow: hidden;
+    margin-bottom: -2.25em;
 
     a {
       display: block;
       position: absolute;
       top: 0; right: 0; bottom: 0; left: 0;
       text-indent: -999em;
+      background: url(../img/john.jpg) no-repeat center center;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
     }
   }
 
   ul { padding: 0; }
   li {
-    display: inline;
+    display: inline-block;
     font-family: @font-family-alt;
     text-transform: uppercase;
     font-weight: 900;
+    width: 4.0em;
+    
+    &:nth-child(3) {
+      margin-right: 7em;
+    }
 
     a {
-      color: #000;
+      color: #AAA;
       text-decoration: none;
       padding: 0.25em;
 
-      &:hover { color: @accent-color; }
+      &:hover { color: #000; }
+      &.page-current { color: @accent-color; }
     }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @font-family-alt;
+  text-transform: uppercase;
+  small {
+    display: block;
+    opacity: 0.4;
   }
 }
 
 main {
   width: 80%;
-  max-width: 35em;
-  margin: 3em auto;
-  text-align: justify;
+  max-width: 30em;
+  margin: 4em auto;
+  text-align: center;
 }
 
 a {
