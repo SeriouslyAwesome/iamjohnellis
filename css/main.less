@@ -61,10 +61,11 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-@accent-color: #F04A2D;
+@accent-color: #9DC647;
+@secondary-color: #F04A2D;
 @font-size-base: 18px;
 @font-family-base: "chaparral-pro", Georgia, Times, serif;
-@font-family-alt: "brandon-grotesque", Helvetica, Arial, sans-serif;
+@font-family-alt: "din-condensed-web", Helvetica, Arial, sans-serif;
 
 body {
   font-size: @font-size-base;
@@ -98,14 +99,19 @@ body {
     }
   }
 
-  ul { padding: 0; }
+  ul {
+    padding: 0;
+    margin-bottom: 0;
+  }
   li {
     display: inline-block;
     font-family: @font-family-alt;
     text-transform: uppercase;
-    font-weight: 900;
-    width: 4.0em;
-    
+    width: 4em;
+    vertical-align: top;
+    font-size: 1.25em;
+    line-height: 1.25em;
+
     &:nth-child(3) {
       margin-right: 7em;
     }
@@ -114,9 +120,31 @@ body {
       color: #AAA;
       text-decoration: none;
       padding: 0.25em;
+      display: inline-block;
+      -webkit-transition: color 0.25s ease-in-out;
+      -moz-transition: color 0.25s ease-in-out;
+      -ms-transition: color 0.25s ease-in-out;
+      -o-transition: color 0.25s ease-in-out;
+      transition: color 0.25s ease-in-out;
 
       &:hover { color: #000; }
-      &.page-current { color: @accent-color; }
+    }
+
+    &.page-current a { color: @accent-color; }
+
+    .nav-subtitle {
+      display: block;
+      color: #AAA;
+      opacity: 0.0;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      -ms-transition: all 0.25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+    }
+
+    &:hover, &.page-current {
+      .nav-subtitle { opacity: 1; }
     }
   }
 }
@@ -124,24 +152,57 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: @font-family-alt;
   text-transform: uppercase;
+  font-weight: normal;
   small {
     display: block;
     opacity: 0.4;
   }
 }
 
-main {
+#content {
   width: 80%;
-  max-width: 30em;
-  margin: 4em auto;
-  text-align: center;
+  max-width: 920px;
+  margin: 2em auto;
+  // background: #eee;
+
+  aside {
+    float: left;
+    width: 40%;
+    text-align: right;
+
+    h2.hero {
+      text-align: right;
+      font-size: 2.5em;
+      line-height: 1em;
+      margin-top: 0.425em;
+      color: @accent-color;
+    }
+  }
+
+  main, .body {
+    float: right;
+    width: 56%;
+  }
+
+  section {
+    width: 100%;
+    clear: both;
+    margin-bottom: 2em;
+  }
 }
 
 a {
-  color: #F04A2D;
+  color: @accent-color;
   text-decoration: none;
-  
-  &:hover { text-decoration: underline; }
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
+  &:hover { 
+    color: @secondary-color;
+  }
   &:active { color: #CCC; }
 }
 

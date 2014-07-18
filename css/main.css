@@ -83,13 +83,16 @@ body {
 }
 #nav-primary ul {
   padding: 0;
+  margin-bottom: 0;
 }
 #nav-primary li {
   display: inline-block;
-  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+  font-family: "din-condensed-web", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 900;
-  width: 4.0em;
+  width: 4em;
+  vertical-align: top;
+  font-size: 1.25em;
+  line-height: 1.25em;
 }
 #nav-primary li:nth-child(3) {
   margin-right: 7em;
@@ -98,12 +101,32 @@ body {
   color: #AAA;
   text-decoration: none;
   padding: 0.25em;
+  display: inline-block;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 #nav-primary li a:hover {
   color: #000;
 }
-#nav-primary li a.page-current {
-  color: #f04a2d;
+#nav-primary li.page-current a {
+  color: #9dc647;
+}
+#nav-primary li .nav-subtitle {
+  display: block;
+  color: #AAA;
+  opacity: 0.0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+#nav-primary li:hover .nav-subtitle,
+#nav-primary li.page-current .nav-subtitle {
+  opacity: 1;
 }
 h1,
 h2,
@@ -111,8 +134,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+  font-family: "din-condensed-web", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
+  font-weight: normal;
 }
 h1 small,
 h2 small,
@@ -123,18 +147,44 @@ h6 small {
   display: block;
   opacity: 0.4;
 }
-main {
+#content {
   width: 80%;
-  max-width: 30em;
-  margin: 4em auto;
-  text-align: center;
+  max-width: 920px;
+  margin: 2em auto;
+}
+#content aside {
+  float: left;
+  width: 40%;
+  text-align: right;
+}
+#content aside h2.hero {
+  text-align: right;
+  font-size: 2.5em;
+  line-height: 1em;
+  margin-top: 0.425em;
+  color: #9dc647;
+}
+#content main,
+#content .body {
+  float: right;
+  width: 56%;
+}
+#content section {
+  width: 100%;
+  clear: both;
+  margin-bottom: 2em;
 }
 a {
-  color: #F04A2D;
+  color: #9dc647;
   text-decoration: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 a:hover {
-  text-decoration: underline;
+  color: #f04a2d;
 }
 a:active {
   color: #CCC;
