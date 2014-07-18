@@ -63,6 +63,7 @@ textarea {
 
 @accent-color: #9DC647;
 @secondary-color: #F04A2D;
+@gray: #ccc;
 @font-size-base: 18px;
 @font-family-base: "chaparral-pro", Georgia, Times, serif;
 @font-family-alt: "din-condensed-web", Helvetica, Arial, sans-serif;
@@ -77,19 +78,20 @@ body {
   text-align: center;
 
   h1 {
-    width: 3em;
-    height: 3em;
-    background: #DDD;
+    width: 3.25em;
+    height: 3.25em;
     border-radius: 5em;
     margin: 1em auto;
     position: relative;
     overflow: hidden;
-    margin-bottom: -2.25em;
+    margin-bottom: -2.575em;
+    border: 2px dotted @accent-color;
 
     a {
       display: block;
       position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
+      top: 4px; right: 4px; bottom: 4px; left: 4px;
+      border-radius: 5em;
       text-indent: -999em;
       background: url(../img/john.jpg) no-repeat center center;
       -webkit-background-size: contain;
@@ -103,6 +105,7 @@ body {
     padding: 0;
     margin-bottom: 0;
   }
+
   li {
     display: inline-block;
     font-family: @font-family-alt;
@@ -110,14 +113,14 @@ body {
     width: 4em;
     vertical-align: top;
     font-size: 1.25em;
-    line-height: 1.25em;
+    line-height: 1em;
 
     &:nth-child(3) {
       margin-right: 7em;
     }
 
     a {
-      color: #AAA;
+      color: @gray;
       text-decoration: none;
       padding: 0.25em;
       display: inline-block;
@@ -127,14 +130,14 @@ body {
       -o-transition: color 0.25s ease-in-out;
       transition: color 0.25s ease-in-out;
 
-      &:hover { color: #000; }
+      &:hover { color: @secondary-color; }
     }
 
-    &.page-current a { color: @accent-color; }
+    &.page-current a { color: @secondary-color; }
 
     .nav-subtitle {
       display: block;
-      color: #AAA;
+      color: @gray;
       opacity: 0.0;
       -webkit-transition: all 0.25s ease-in-out;
       -moz-transition: all 0.25s ease-in-out;
