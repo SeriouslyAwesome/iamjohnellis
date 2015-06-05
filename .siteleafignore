@@ -3,7 +3,8 @@
 .git
 bower_components
 scripts/coffee/*.*
-styles/sass/*.*
+*.scss
+config.codekit
 config/*.*
 Gemfile
 Guardfile
