@@ -675,8 +675,14 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help; }
 
+.wf-loading nav,
+.wf-loading #content,
+.wf-loading footer {
+  opacity: 0; }
+
 body {
-  background-color: #E5E5DB;
+  background: #E5E5DB url(../img/loader.gif) no-repeat center center;
+  background-size: 2rem 2rem;
   padding: 1em; }
 
 code {
