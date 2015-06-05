@@ -1,9 +1,7 @@
 .wf-loading {
   nav,
   #content,
-  footer {
-    opacity: 0;
-  }
+  footer { opacity: 0; }
 }
 
 body {
@@ -31,7 +29,6 @@ p a { text-decoration: underline; }
 
     @include media($desktop) {
       @include span-columns(4);
-      @include shift(1);
       text-align: right;
     }
   }
@@ -43,7 +40,7 @@ p a { text-decoration: underline; }
     }
 
     @include media($desktop) {
-      @include span-columns(6);
+      @include span-columns(8);
     }
   }
 

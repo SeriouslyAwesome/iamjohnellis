@@ -14,8 +14,6 @@ h3.date { color: $medium-gray; }
   .read-more {
     @extend h3;
 
-    &:after {
-      content: " »";
-    }
+    &:after { content: " »"; }
   }
 }
