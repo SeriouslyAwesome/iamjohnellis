@@ -1,0 +1,21 @@
+h2.hero { font-size: 3rem; }
+h3.date { color: $medium-gray; }
+
+.body {
+  h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+
+    &:first-child { margin-top: 0; }
+    a { color: $dark-gray; }
+    small { color: $medium-gray; }
+  }
+
+  .read-more {
+    @extend h3;
+
+    &:after {
+      content: " »";
+    }
+  }
+}

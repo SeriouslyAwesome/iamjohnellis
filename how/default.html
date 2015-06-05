@@ -1,0 +1,29 @@
+{% include 'includes/header' %}
+
+  <div id="content">
+    <section class="clearfix">
+      <aside>
+        <h2 class="hero">{{ title }}</h2>
+        <h3 class="date"><time datetime="">{{ date | date: "%B %d, %Y" }}</time></h3>
+      </aside>
+
+      <div class="body">
+        {{ body }}
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'iamjohnellis';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </section>
+  </div>
+
+{% include 'includes/footer' %}

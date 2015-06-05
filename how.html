@@ -1,0 +1,20 @@
+{% include 'includes/header' %}
+
+    <div id="content">
+      {% for post in posts %}
+        <section class="clearfix">
+          <aside>
+            <h2 class="hero">{{ post.title }}</h2>
+            <h3 class="date"><time datetime="">{{ post.date | date: "%B %d, %Y" }}</time></h3>
+          </aside>
+
+          <div class="body">
+            {{ post.excerpt }}
+
+            <a href="{{ post.url }}" class="read-more">Read it</a>
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+
+{% include 'includes/footer' %}

@@ -1,0 +1,45 @@
+body {
+  background-color: $base-background-color;
+  padding: 1em;
+}
+
+code { font-size: rem(16); }
+
+p a { text-decoration: underline; }
+
+#content {
+  @include outer-container;
+  padding: 3em;
+  background-color: white;
+  box-shadow: rem(6) rem(6) 0 $base-shadow-color;
+
+  aside {
+
+    @include media($tablet) {
+      @include span-columns(4);
+      text-align: right;
+    }
+
+    @include media($desktop) {
+      @include span-columns(4);
+      @include shift(1);
+      text-align: right;
+    }
+  }
+
+  main,
+  div.body {
+    @include media($tablet) {
+      @include span-columns(8);
+    }
+
+    @include media($desktop) {
+      @include span-columns(6);
+    }
+  }
+
+  section {
+    @include clearfix;
+    margin-bottom: 4rem;
+  }
+}
