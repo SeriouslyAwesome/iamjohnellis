@@ -2,3 +2,5 @@
 tmp/restart.txt
 
 *.scssc
+
+*.codekit

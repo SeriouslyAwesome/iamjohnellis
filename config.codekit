@@ -1929,23 +1929,37 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/css\/normalize.css": {
-		"fileType": 16,
-		"ignore": 0,
+	"\/css\/vendor\/_normalize.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/normalize.css",
-		"outputAbbreviatedPath": "No Output Path",
+		"inputAbbreviatedPath": "\/css\/vendor\/_normalize.scss",
+		"outputAbbreviatedPath": "\/css\/css\/_normalize.css",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
 		},
-	"\/css\/vendor\/prism.css": {
-		"fileType": 16,
-		"ignore": 0,
+	"\/css\/vendor\/_prism.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/vendor\/prism.css",
-		"outputAbbreviatedPath": "No Output Path",
+		"inputAbbreviatedPath": "\/css\/vendor\/_prism.scss",
+		"outputAbbreviatedPath": "\/css\/css\/_prism.css",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
 		},
 	"\/default.html": {
 		"fileType": 8192,
@@ -1985,36 +1999,25 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/js\/main.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/main.js",
-		"outputAbbreviatedPath": "\/js\/min\/main-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/js\/main.js.coffee": {
+	"\/js\/main.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/main.js.coffee",
+		"inputAbbreviatedPath": "\/js\/main.coffee",
 		"minifyOutput": 1,
-		"outputAbbreviatedPath": "\/js\/main.js.js",
+		"outputAbbreviatedPath": "\/js\/main.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/min\/plugins-min.js": {
+	"\/js\/main.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/min\/plugins-min.js",
-		"outputAbbreviatedPath": "\/js\/min\/min\/plugins-min-min.js",
+		"inputAbbreviatedPath": "\/js\/main.js",
+		"outputAbbreviatedPath": "\/js\/min\/main-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -2031,49 +2034,26 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/vendor\/jquery-1.11.0.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/vendor\/jquery-1.11.0.min.js",
-		"outputAbbreviatedPath": "\/js\/vendor\/min\/jquery-1.11.0.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/js\/vendor\/min\/prism.min-min.js": {
-		"fileType": 64,
+	"\/README.md": {
+		"criticStyle": 0,
+		"enableFootnotes": 0,
+		"enableLabels": 1,
+		"enableSmartQuotes": 1,
+		"escapeLineBreaks": 0,
+		"fileType": 4096,
 		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/vendor\/min\/prism.min-min.js",
-		"outputAbbreviatedPath": "\/js\/vendor\/min\/min\/prism.min-min-min.js",
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/README.md",
+		"maskEmailAddresses": 1,
+		"outputAbbreviatedPath": "\/README.html",
+		"outputFormat": 0,
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/js\/vendor\/modernizr-2.6.2.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/vendor\/modernizr-2.6.2.min.js",
-		"outputAbbreviatedPath": "\/js\/vendor\/min\/modernizr-2.6.2.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/js\/vendor\/prism.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/vendor\/prism.min.js",
-		"outputAbbreviatedPath": "\/js\/vendor\/min\/prism.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"outputStyle": 0,
+		"parseMetadata": 1,
+		"processHTML": 0,
+		"randomFootnoteNumbers": 0,
+		"useCompatibilityMode": 0
 		},
 	"\/style.css": {
 		"fileType": 16,
