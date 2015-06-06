@@ -1,3 +1,8 @@
+showLocation = ->
+  hidden = document.querySelector('.hidden')
+  hidden.classList.remove 'hidden'
+  hidden.classList.add 'shown'
+
 loadDataFromServer = (url)->
   req = new XMLHttpRequest()
 
@@ -9,8 +14,9 @@ loadDataFromServer = (url)->
         city = data.locations[0].properties.city
         state = data.locations[0].properties.state
         currentLocation.innerHTML = "#{city}, #{state}"
+        window.setTimeout(showLocation, 750)
       else
-        console.log 'Error loading data...'
+        window.setTimeout(showLocation, 750)
 
   req.open 'GET', url, false
   req.send()

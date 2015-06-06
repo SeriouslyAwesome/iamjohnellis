@@ -1,0 +1,8 @@
+#current-location {
+  -webkit-transition-delay: 2s; /* Safari */
+  transition-delay: 2s;
+  @include transition(all 0.25s ease-in-out);
+
+  &.hidden { opacity: 0; }
+  &.shown { opacity: 1; }
+}
