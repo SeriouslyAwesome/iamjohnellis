@@ -1,0 +1,13 @@
+{% include 'includes/header' %}
+
+    <div id="content" class="clearfix">
+      <aside>
+        <h2 id="current-location" class="hero">{{ meta['aside'] }}</h2>
+      </aside>
+
+      <main>
+        {{ body }}
+      </main>
+    </div>
+
+{% include 'includes/footer' %}
