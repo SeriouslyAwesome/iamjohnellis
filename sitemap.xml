@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>http://iamjohnellis.com/</loc>
+    <lastmod>2018-02-20T21:04:20+00:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+
+  <url>
+    <loc>http://iamjohnellis.com/what</loc>
+    <lastmod>2014-11-13T17:28:58+00:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+
+  <url>
+    <loc>http://iamjohnellis.com/where</loc>
+    <lastmod>2018-02-20T21:05:57+00:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+
+  <url>
+    <loc>http://iamjohnellis.com/how</loc>
+    <lastmod>2014-07-18T22:16:01+00:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://iamjohnellis.com/how/say-hello-to-reeed</loc>
+    <lastmod>2015-05-06T22:26:52+00:00</lastmod>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://iamjohnellis.com/how/stately-rails</loc>
+    <lastmod>2015-06-05T01:45:41+00:00</lastmod>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://iamjohnellis.com/how/postgresql-array-tagging</loc>
+    <lastmod>2015-06-05T17:36:13+00:00</lastmod>
+    <priority>0.5</priority>
+  </url>
+  
+
+</urlset>

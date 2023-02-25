@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>John Ellis</title>
+    <link>http://iamjohnellis.com</link>
+    <pubDate>Sat, 25 Feb 2023 17:12:09 -0600</pubDate>
+    
+    <item>
+      <title>Say Hello to Reeed</title>
+      <link>http://iamjohnellis.com/how/say-hello-to-reeed</link>
+      <pubDate>Tue, 21 Apr 2015 11:03:00 -0500</pubDate>
+      <author>John Ellis</author>
+      <guid>http://iamjohnellis.com/how/say-hello-to-reeed</guid>
+      <description>&lt;p&gt;I recently teamed up with a great designer by the name of &lt;a href=&quot;http://www.stoodio.com&quot;&gt;Ray Hernandez&lt;/a&gt; to build a new product that bills itself as &amp;ldquo;a platform for private, long-form, one-on-one communication.&amp;rdquo; In a way, it&amp;rsquo;s a rejection of the idea that we&amp;rsquo;re only supposed to speak to each other in 140 characters that are only visible for 10 seconds.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s bringing the old pen pal tradition into the 21st century. Say hello to &lt;a href=&quot;http://www.reeed.co&quot;&gt;Reeed.co&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is my first personal side project since launching &lt;a href=&quot;http://www.thedemocractictravelers.com&quot;&gt;The Democratic Travelers&lt;/a&gt;, over two years ago. The original idea came from a system that Ray and his wife use to diffuse heated arguments before they even have a chance to heat up – instead of raising their voices, they write what they&amp;rsquo;re thinking and feeling in a composition notebook, and take turns passing it back and forth. With each party free to read and respond in private and on their own time, tempers never have a chance to flare up and arguments are resolved with level heads.&lt;/p&gt;
+
+&lt;p&gt;We both realized that a digital version of this bring the benefits of this more measured communication to anyone in any kind of long-distance relationship. Just a few of the scenarios we&amp;rsquo;ve thought of include mentors &amp;amp; proteges, active-duty military folks &amp;amp; their families, prison inmates &amp;amp; their families, high school sweethearts at separate colleges, or just two strangers who want to be pen pals.&lt;/p&gt;
+
+&lt;p&gt;There are so many other uses we haven&amp;rsquo;t thought of, so if you have ideas on how you might use &lt;a href=&quot;http://www.reeed.co&quot;&gt;Reeed&lt;/a&gt;, let me know in the comments!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stately-Rails: The United States in your Asset Pipeline</title>
+      <link>http://iamjohnellis.com/how/stately-rails</link>
+      <pubDate>Tue, 02 Dec 2014 08:49:00 -0600</pubDate>
+      <author>John Ellis</author>
+      <guid>http://iamjohnellis.com/how/stately-rails</guid>
+      <description>&lt;p&gt;As part of &lt;a href=&quot;https://github.com/Velocis/stately-rails&quot;&gt;The Democratic Travelers&lt;/a&gt; I&amp;rsquo;m working on the ability to show which states Laura and I have been to. We&amp;rsquo;re currently tracking that information in the database, but the only place it shows up on the front-end is in a simple numerical count, such as &amp;ldquo;we&amp;rsquo;ve been to 39 states&amp;hellip;&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;We get asked a lot which states we&amp;rsquo;ve been to and which one&amp;rsquo;s we have left to tackle, so I thought it&amp;rsquo;d be great to show a mini map to answer those questions quickly. I stumbled across &lt;a href=&quot;http://intridea.github.io/stately/&quot;&gt;Stately&lt;/a&gt;, a great little symbol font that allows you to create a customizable, scalable map of the United States with minimal mark up.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/map.png&quot; alt=&quot;map&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;Normally when I find something like this, I look for a gemified version for use in the Ruby on Rails asset pipeline, but alas, none existed for Stately. I took it as a good opportunity to put together my first ever Ruby gem: &lt;a href=&quot;https://github.com/Velocis/stately-rails&quot;&gt;stately-rails&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;stately-rails&lt;/h2&gt;
+
+&lt;p&gt;The gem is available on &lt;a href=&quot;https://rubygems.org/gems/stately-rails&quot;&gt;RubyGems.org&lt;/a&gt; which means you can add it to your project in the usual manner:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# Gemfile
+gem &#39;stately-rails&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From there, you just need to add the stylesheet to your manifest:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-scss&quot;&gt;
+// app/assets/stylesheets/application.css
+*= require stately
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The rest of the set up instructions (along with the source code) are available on &lt;a href=&quot;https://github.com/Velocis/stately-rails&quot;&gt;GitHub&lt;/a&gt;, so if you find something wrong or see room for improvement, please feel free create a pull request.&lt;/p&gt;
+
+&lt;p&gt;Special thanks to to &lt;a href=&quot;https://twitter.com/bpmarkowitz&quot;&gt;Ben Markowitz&lt;/a&gt; and &lt;a href=&quot;http://www.intridea.com&quot;&gt;Intridea&lt;/a&gt; for making &lt;a href=&quot;http://intridea.github.io/stately/&quot;&gt;Stately&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The end.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Auto-complete tagging with Rails, PostgreSQL arrays, and Chosen: A complete example.</title>
+      <link>http://iamjohnellis.com/how/postgresql-array-tagging</link>
+      <pubDate>Thu, 13 Nov 2014 11:44:00 -0600</pubDate>
+      <author>John Ellis</author>
+      <guid>http://iamjohnellis.com/how/postgresql-array-tagging</guid>
+      <description>&lt;p&gt;Sometimes, &lt;a href=&quot;#&quot; class=&quot;pizzazz&quot; data-src=&quot;http://www.reactiongifs.com/r/2013/07/LolBitchPlease.gif&quot;&gt;you just need to add tagging to a form on your website.&lt;/a&gt; At work, we (&lt;a href=&quot;http://frederickrangel.com&quot;&gt;Freddy&lt;/a&gt; and I) recently had to implement some tagging for fields that had a pre-defined list of options to choose from. Taking advantage of Rails 4.x&amp;rsquo;s and PostgreSQL&amp;rsquo;s native support for array-type columns, we were able to avoid the hassle of extra models, join tables, foreign keys, etc. We then used &lt;a href=&quot;http://harvesthq.github.io/chosen/&quot;&gt;Chosen.js&lt;/a&gt; to make the UI clean and dead-simple.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s how it all came together.&lt;/p&gt;
+
+&lt;h2&gt;1. Let&amp;rsquo;s add our column to the DB.&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start by adding a column to our &lt;code&gt;Person&lt;/code&gt; model - we&amp;rsquo;ll call it &lt;code&gt;states_visited&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+# in your console
+rails g migration add_states_visited_to_people
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Open up that migration file and let&amp;rsquo;s make it look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# db/migrate/XYZ_add_states_visited_to_people.rb
+class AddStatesVisitedToPeople &lt; ActiveRecord::Migration
+  def change
+    add_column :people, :states_visited, :text, array: true, default: []
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And of course, run the migration: &lt;code&gt;rake db:migrate&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;2. Now set up the column in your strong parameters.&lt;/h2&gt;
+
+&lt;p&gt;Because ActiveRecord now expects an array, we need to let strong_parameters know what to permit, so we&amp;rsquo;ll tweak our &lt;code&gt;UsersController&lt;/code&gt; like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# app/controllers/people_controller.rb
+def person_params
+  params.require(:person).permit(:name, { states_visited: [] })
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The key bit here is &lt;code&gt;{ states_visited: [] }&lt;/code&gt;, which gives &lt;code&gt;strong_parameters&lt;/code&gt; a heads up that we&amp;rsquo;re going to be submitting the data for that column as an array.&lt;/p&gt;
+
+&lt;h2&gt;3. Set up your form helper&lt;/h2&gt;
+
+&lt;p&gt;Actually, before we can do that, I&amp;rsquo;m going to set up a constant that contains an &lt;code&gt;Array&lt;/code&gt; of the names of the 50 United States of America to reference in our form helper a little later.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# config/initializers/states.rb
+MURICA = [&quot;Alabama&quot;, &quot;Alaska&quot;, ..., &quot;Wyoming&quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(You&amp;rsquo;ll need to restart after you add this)&lt;/p&gt;
+
+&lt;p&gt;Great. Now the semantic way to mark this up would be with a multiple-select tag - we have a list of options to select from, and you can select multiple options from that list. So lets do that.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# app/views/people/show.html.erb
+&lt;%= form_for @user do |f| %&gt;
+    # stuff...
+    
+    &lt;%= f.label :name, &#39;Your Name&#39; %&gt;
+    &lt;%= f.input :name, placeholder: &#39;John/Jane Doe&#39; %&gt;
+    
+    &lt;%= f.label :states_visited, &#39;States You\&#39;ve Been To&#39; %&gt;
+    &lt;%= f.select :states_visited, MURICA, {}, { multiple: true, class: &#39;taggable&#39; } %&gt;
+&lt;% end %&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Believe it or not, that&amp;rsquo;s all we need to get it working. But as far as I know, not a single person on earth enjoys using multiple-select fields when filling out a form, so we&amp;rsquo;re going to style it up a bit. &lt;/p&gt;
+
+&lt;h2&gt;4. Implement Chosen.js&lt;/h2&gt;
+
+&lt;p&gt;Chosen is a great little jQuery plugin for easily and vastly improving the UI of your selects and multiple-selects. Since we&amp;rsquo;re using Rails, we&amp;rsquo;ll just add the &lt;a href=&quot;https://github.com/tsechingho/chosen-rails&quot;&gt;&lt;code&gt;chosen-rails&lt;/code&gt; gem&lt;/a&gt; to our gemfile and run &lt;code&gt;bundle&lt;/code&gt; to install it, and then restart your app again.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll also want to include it in our &lt;code&gt;application.js&lt;/code&gt; manifest (I&amp;rsquo;m using Coffeescript here):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# app/assets/javascripts/application.js
+//= require chosen-jquery
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And likewise to our stylesheet manifest:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# app/assets/stylesheets/application.css
+*= require chosen
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now it&amp;rsquo;s just a matter of initializing Chosen on our select elements, which we setup with a class of &amp;ldquo;taggable&amp;rdquo;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-coffeescript&quot;&gt;
+# app/assets/javascripts/forms.js
+jQuery -&gt;
+  $(&#39;.taggable&#39;).chosen()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Well that was easy. I&amp;rsquo;ll leave it to you to research the options available in the Chosen documentaiton, but with those two lines, we go from this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/demo_boring_select.png&quot; alt=&quot;demo_boring_select&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;&amp;hellip;to this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/demo_exciting.png&quot; alt=&quot;demo_exciting&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s get our view to display our new fancy tags. You can do this in a similar way you might with any other standard Rails association:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# app/views/people/show.html.erb
+&lt;h2&gt;Hi! My name is &lt;%= @person.name %&gt;!&lt;/h2&gt;
+
+&lt;h2&gt;States I&#39;ve Been To:&lt;/h2&gt;
+&lt;% if @person.states_visited.any? %&gt;
+  &lt;ul&gt;
+    &lt;% @person.states_visited.each do |state| %&gt;
+      &lt;li&gt;&lt;%= state %&gt;&lt;/li&gt;
+    &lt;% end %&gt;
+  &lt;/ul&gt;
+&lt;% end %&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;5. ???&lt;/h2&gt;
+
+&lt;p&gt;But wait! There&amp;rsquo;s a problem. The rails helper for multiple-select elements introduces a combination feature/bug that will complicate things a bit. Rails will add a hidden input just before your select tag that will explicitly set your &lt;code&gt;states_visited&lt;/code&gt; attribute to &lt;code&gt;nil&lt;/code&gt; in the event that you deselect any previously selected options. This is similar to Rails&amp;rsquo; checkbox helper - HTML will not send form data for a given attribute if no options (or checkboxes) are selected (or checked). This hidden input forces the &lt;code&gt;nil&lt;/code&gt; value to be sent with the form, thus updating your record appropriately.&lt;/p&gt;
+
+&lt;p&gt;However, in this case, the hidden input is being included as an element in our array of &lt;code&gt;states_visited&lt;/code&gt;, making the first entry in our list a big fat blank, regardless of other values. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/demo_bug.png&quot; alt=&quot;demo_bug&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;To get around this, we&amp;rsquo;re going to follow the advice gleaned from &lt;a href=&quot;http://stackoverflow.com/questions/8929230/why-is-the-first-element-always-blank-in-my-rails-multi-select-using-an-embedde/9085554#9085554&quot;&gt;this StackOverflow answer&lt;/a&gt;, and set up a private method in our &lt;code&gt;ApplicationController&lt;/code&gt; that will strip blank items from any array-type parameters before doing anything with the params:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+# app/controllers/application_controller.rb
+class ApplicationController &lt; ActionController::Base
+  before_action :clean_select_multiple_params, only: [:create, :update]
+
+  # existing code...
+
+  private
+
+  # Used to strip blank first values from array-type params.
+  def clean_select_multiple_params hash = params
+    hash.each do |key, value|
+      case value
+      when Array then value.reject!(&amp;:blank?)
+      when Hash then clean_select_multiple_params(value)
+      end
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This method loops through the params hash, checking if a given parameter is an &lt;code&gt;Array&lt;/code&gt; or a &lt;code&gt;Hash&lt;/code&gt; (for Postgres&amp;rsquo;s h-store column types), and rejects any blank values contained therein.&lt;/p&gt;
+
+&lt;p&gt;By putting this in &lt;code&gt;ApplicationController&lt;/code&gt; and calling it in a &lt;code&gt;before_action&lt;/code&gt; filter we&amp;rsquo;re making it happen on any future controllers that have &lt;code&gt;#create&lt;/code&gt; and &lt;code&gt;#update&lt;/code&gt; methods. If we later decide we want to implement tagging on any other models, we won&amp;rsquo;t have to worry about this feature/bug any more.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(The other answers on SO seem to favor adding a similar method to our &lt;code&gt;Person&lt;/code&gt; model. This would require duplicating that method in any other models that might utilize tagging. The way I see it, it&amp;rsquo;s the controller&amp;rsquo;s job to serve as the gatekeeper of data passing between the view and the model.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;6. Profit&lt;/h2&gt;
+
+&lt;p&gt;Speaking of DRY, since we&amp;rsquo;ve bound our Chosen.js initializer to anything with a class of &amp;ldquo;taggable&amp;rdquo;, you can now rinse and repeat steps 1, 2, and 3 on any additional columns you want, and fill your whole app with taggable inputs. &lt;a href=&quot;http://harvesthq.github.io/chosen/&quot;&gt;Chosen.js&lt;/a&gt; offers great customizations involving grouped selects and more, so go check it out and customize to suit your needs.&lt;/p&gt;
+
+&lt;p&gt;The full working code for &lt;a href=&quot;https://github.com/SeriouslyAwesome/demo_array_tagging&quot;&gt;this tutorial is available on GitHub&lt;/a&gt;, and I encourage you to clone it and test it out for yourself.&lt;/p&gt;
+
+&lt;p&gt;The end.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

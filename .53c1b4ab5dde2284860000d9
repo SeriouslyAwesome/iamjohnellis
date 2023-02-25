@@ -1,0 +1,171 @@
+---
+time: 1677366746
+inventory:
+  "/who/index.html":
+    md5: da6d01f3aed3082e42488054f6e72d86
+    time: 1677366728
+  "/index.html":
+    md5: da6d01f3aed3082e42488054f6e72d86
+    time: 1677366728
+  "/what/index.html":
+    md5: c8a1956d7e479db10ff001fb5fb2c5ea
+    time: 1677366728
+  "/where/index.html":
+    md5: d9b9c70b18d5e88cf9b21a990ee8a6eb
+    time: 1677366728
+  "/when/index.html":
+    md5: 3b81c3487c29a4bc97f95a9fb43d6480
+    time: 1677366728
+  "/why/index.html":
+    md5: 05eb62cbaec3c08f8105ba84101e40d6
+    time: 1677366728
+  "/how/index.html":
+    md5: 6c73ec6ddc6cdc583ea40a4720bf3963
+    time: 1677366729
+  "/how/say-hello-to-reeed/index.html":
+    md5: d7ad233d4e581f647e063da64ea54a61
+    time: 1677366729
+  "/how/stately-rails/index.html":
+    md5: dbe29cd46a299ded1fa9f72f98475f53
+    time: 1677366729
+  "/how/postgresql-array-tagging/index.html":
+    md5: ec18d0aa73a79ab3385d08d3d553fb31
+    time: 1677366729
+  "/how/how-to-use-the-ynab-method-with-simple-1/index.html":
+    md5: c06493eebfa24818f88599963721bf28
+    time: 1677366729
+  "/how/robo-tomatos/index.html":
+    md5: 0e38d837c4192c695faf0a2aa99818ae
+    time: 1677366729
+  "/how/paperclip-sidekiq-jquery-file-upload/index.html":
+    md5: 779f59c37d6ed32751a08556d8c374bd
+    time: 1677366729
+  "/how/archive/index.html":
+    md5: 1c62a2d5d19fa431c2face7e52bd4223
+    time: 1677366729
+  "/how/tags/index.html":
+    md5: b61de101a4350bf2b6d22e7d4d796cd1
+    time: 1677366729
+  "/what/experience/index.html":
+    md5: 193f53e8dbf646eee5103926a0edbfb0
+    time: 1677366729
+  "/what/skills/index.html":
+    md5: 8227be9e4f10ee3db2c686c26cbf15e1
+    time: 1677366729
+  "/what/education/index.html":
+    md5: 322fa46ea12bb990da281d7a0a2c497c
+    time: 1677366729
+  "/why/the-democratic-travelers/index.html":
+    md5: 971caae06f1c009ce62b01ed19421bc5
+    time: 1677366729
+  "/CNAME":
+    md5: 343b489e31616aa12f479d2020d11879
+    time: 1677366729
+  "/sitemap.xml":
+    md5: 479d927be87cd36349582170d5287c8d
+    time: 1677366729
+  "/feed.xml":
+    md5: 5ad0b1329070e9eeb44759fc979d5e59
+    time: 1677366729
+  "/assets/wink.gif":
+    md5: 97f253c8d037a358bbd3a17e48c692b7
+    time: 1677366729
+  "/crossdomain.xml":
+    md5: 67529f46ce169a9db2a2eb4e643c894a
+    time: 1677366729
+  "/humans.txt":
+    md5: 3c1c06304fc93613e7b88430748e93c1
+    time: 1677366729
+  "/img/wink.gif":
+    md5: 97f253c8d037a358bbd3a17e48c692b7
+    time: 1677366729
+  "/robots.txt":
+    md5: 3e42d810e8c56732b59094385e3f52b5
+    time: 1677366729
+  "/assets/giphy.gif":
+    md5: 19fb9cf63312bf721d57c10782d4345b
+    time: 1677366729
+  "/assets/demo_exciting.png":
+    md5: 23b1fa946ff7cbaf3001d5b3a5e8e5a4
+    time: 1677366730
+  "/apple-touch-icon-114x114.png":
+    md5: 84ce0d289fd6c496898e8bdec7f8557f
+    time: 1677366730
+  "/apple-touch-icon-120x120.png":
+    md5: 3e3ebb763c31214ed4b6b94d17070363
+    time: 1677366730
+  "/apple-touch-icon-144x144.png":
+    md5: aa165e08a27da50ebb0758b0371b2e55
+    time: 1677366730
+  "/apple-touch-icon-152x152.png":
+    md5: 9d94b453a65499c22db4dd94a3dc4538
+    time: 1677366730
+  "/apple-touch-icon-57x57.png":
+    md5: 63bdec8e25177e1a77417fe23a59a7f9
+    time: 1677366730
+  "/apple-touch-icon-72x72.png":
+    md5: c3e6be7cb167375b1bb25cad7cc58120
+    time: 1677366730
+  "/apple-touch-icon-76x76.png":
+    md5: b70e5cd0d3ed1794be4a47ae37ce8cbf
+    time: 1677366730
+  "/apple-touch-icon-precomposed.png":
+    md5: aa165e08a27da50ebb0758b0371b2e55
+    time: 1677366730
+  "/apple-touch-icon.png":
+    md5: 63bdec8e25177e1a77417fe23a59a7f9
+    time: 1677366730
+  "/favicon.ico":
+    md5: 02178db69f2e38b5045e3ee448f4477e
+    time: 1677366730
+  "/assets/map.png":
+    md5: 8b4695a5c43af45432a30ff0c35e50ce
+    time: 1677366731
+  "/js/plugins.js":
+    md5: ed34f1a9883b7be9d817b729b47b4cfe
+    time: 1677366731
+  "/README.md":
+    md5: 469effde431b1b04e0db050cd6594760
+    time: 1677366731
+  "/img/loader.gif":
+    md5: 66cde07ba638ea22fb5a03e4cf7bf96c
+    time: 1677366731
+  "/js/min/plugins-min.js":
+    md5: ae0be017cb1f9e10569defacb3dab173
+    time: 1677366731
+  "/img/john.jpg":
+    md5: 558805925792063696e257485de23671
+    time: 1677366731
+  "/assets/DemocraticTravelers.jpg":
+    md5: dc685c1aed50c86e7e22cbb3a3691334
+    time: 1677366731
+  "/css/style.css":
+    md5: 49bfeebd68cddb7d04f922757699a4e7
+    time: 1677366731
+  "/js/main.js":
+    md5: b8e6ff54e2bc1e0dfd73c872c3fa15e7
+    time: 1677366731
+  "/assets/demo_bug.png":
+    md5: f33d6e8a1d35ac687aa142940161a834
+    time: 1677366731
+  "/assets/HGL.jpg":
+    md5: fb9079f5bf21a1962657ecb0aae00a8c
+    time: 1677366731
+  "/assets/demo_boring_select.png":
+    md5: 4e37fde97a5be8351a6801f412abd97c
+    time: 1677366732
+  "/assets/JayMaisel.jpg":
+    md5: 35f22327ebac52a337f53eac6fd930ee
+    time: 1677366732
+  "/assets/Platformatic.jpg":
+    md5: ecd443a948083451fd1e6e6ed3ad72cb
+    time: 1677366732
+  "/assets/Reeed.jpg":
+    md5: 4ee5e46849c60320a645bcecb1c0084f
+    time: 1677366732
+  "/assets/Velocis.jpg":
+    md5: 6300244553d32f3f1676bf1919214013
+    time: 1677366732
+  "/assets/scienceexchange.jpg":
+    md5: b9b626239fbf44a5239c0ab66be57e94
+    time: 1677366732

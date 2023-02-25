@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How To: Boost Productivity with Robotic Tomatos | John Ellis</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'dnq6tok',
+          scriptTimeout: 3000
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+  </head>
+
+  <body>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav id="nav-primary">
+      <h1><a href="/">John Ellis</a></h1>
+      <ul>
+        
+          <li >
+            <a href="/" data-alt="I Am">
+              Who
+              <span class="nav-subtitle">I Am</span>
+            </a>
+          </li>
+        
+          <li >
+            <a href="/what" data-alt="I've Done">
+              What
+              <span class="nav-subtitle">I've Done</span>
+            </a>
+          </li>
+        
+          <li >
+            <a href="/where" data-alt="To Find Me">
+              Where
+              <span class="nav-subtitle">To Find Me</span>
+            </a>
+          </li>
+        
+          <li  class="current">
+            <a href="/how" data-alt="to do stuff">
+              How
+              <span class="nav-subtitle">to do stuff</span>
+            </a>
+          </li>
+        
+      </ul>
+    </nav>
+
+
+  <div id="content">
+    <section class="clearfix">
+      <aside>
+        <h2 class="hero">How To: Boost Productivity with Robotic Tomatos</h2>
+        <h3 class="date"><time datetime="">July 25, 2014</time></h3>
+      </aside>
+
+      <div class="body">
+        <h1>Productivy Help from Robotic Tomatos</h1>
+
+<blockquote><p>&hellip;anyone can do any amount of work, provided it isn&rsquo;t the work he is supposed to be doing at that moment.</p><footer>&ndash; Robert Benchley, in Chips off the Old Benchley, 1949</footer></blockquote>
+
+<p>In a bizarre bout of meta-productivity, or what some might call &ldquo;structured procrastination,&rdquo; I&rsquo;ve been procrastinating on actual work to put together a workflow for more productive work periods. Although I&rsquo;m a little late to the game, I&rsquo;m giving the popular Pomodoro Technique<sup>TM</sup> a shot. But I&rsquo;m very easily distracted by <a href="http://www.reddit.com">a certain website</a>, and it&rsquo;s getting in the way of my tomatos.</p>
+
+<p>A few years ago, I found an aptly-named app called <a href="http://www.getconcentrating.com"><em>Concentrate</em></a> that promised to help you get to work by automatically launching applications, quitting other applications, and blocking distracting websites all with a single click. Sadly, Concentrate seems to have been left behind by its developers, and my copy has suddenly stopped working altogether.</p>
+
+<p>While there are no direct replacements, there is an app that can actually do everything Concentrate did, and tons more. Best of all, if you&rsquo;re on a Mac, it&rsquo;s free, and it&rsquo;s already installed on your system.</p>
+
+<h2>Enter Automator</h2>
+
+<p>Automator is probably well known to the casual productivity nerd, but for the uninitiated, you can think of Automator as an intern for your Mac. Any task you might use your silly mouse or keyboard to do manually (say, open an application, or create an iPhoto album, or combine PDF pages, etc.), you can quickly drag-n-drop into a chain that Automator will run automatically.</p>
+
+<p>What follows is an example of how I&rsquo;m using Automator to replicate the functionality of the now defunkt Concentrate, while also integrating the Pomodoro Technique<sup>TM</sup>. The possibilities are damn-near infinite though, so use this as a starting point and tweak, expand, and hack to suit your needs.</p>
+
+<h2>The Setup</h2>
+
+<p>Your needs will undoubtedly vary, but it helps to start with an outline of what you typically do when you sit down to work. For example, when I&rsquo;m doing Ruby/Rails development, I typically do the following:</p>
+
+<ul>
+<li>Open Textmate
+
+<ul>
+<li>Open project folder</li>
+</ul></li>
+<li>Open iTerm
+
+<ul>
+<li><code>cd</code> into project directory in two terminals</li>
+</ul></li>
+<li>Open GitHub for Mac
+
+<ul>
+<li>Select project repo</li>
+</ul></li>
+<li>Open PG Commander</li>
+<li>Open Pandora</li>
+</ul>
+
+<p>If I&rsquo;m on a deadline and really need to focus, I&rsquo;ll also:</p>
+
+<ul>
+<li>Quit Messages</li>
+<li>Quit Mail</li>
+</ul>
+
+<p>When I was using Concentrate, I could blacklist whatever websites I found to be counterproductive. Focus is a free, minimal, and actively-developed alternative. So let&rsquo;s now add to our workflow:</p>
+
+<ul>
+<li>Turn on Focus</li>
+</ul>
+
+<p>So far, that&rsquo;s already <strong>eleven</strong> steps! Just to get ready to work! The whole point of software is to automate repetitive tasks, so let&rsquo;s employ Automator to do what it was born to do!</p>
+
+<h2>ROBOT, ACTIVATE!</h2>
+
+<p>[Image: Open Automator and create an Application]</p>
+
+<p>You&rsquo;ll want to start by opening Automator and creating a new Application. An Application can receive files or folders as input, and do something with them throughout the workflow. So by the end of this, if I drag a project folder onto my Automator app, I&rsquo;d like the following to happen (automatically):</p>
+
+<ul>
+<li>Quit all running applications (except for the ones we&rsquo;re about to use, if they&rsquo;re already open)</li>
+<li>Take the folder we dragged in, and open it in:
+
+<ul>
+<li>Textmate</li>
+<li>iTerm</li>
+<li>GitHub</li>
+</ul></li>
+<li>Open PG Commander</li>
+<li>Open Pandora</li>
+<li>Turn on Focus</li>
+</ul>
+
+<p>Here&rsquo;s what this looks like in Automator so far:</p>
+
+<p>[Image: Illustration of Above Actions]
+<em>Note: You&rsquo;ll notice Focus is activated by a shell script: <code>open focus://focus</code> - at the time of this writing, this is only available with the latest alpha build on GitHub. In testing up this workflow, running a shell script seemed to stop the chain from processing the folder I dropped on the workflow, so I moved the script to the end.</em></p>
+
+<p>Great! We&rsquo;ve now reduced eleven steps down to one! If that&rsquo;s not impressing you yet, let&rsquo;s move on to integrating our Pomodoro Technique<sup>TM</sup>.</p>
+
+<h2>ROBO-TOMATO, ACTIVATE!</h2>
+
+<p>The standard workflow is 25 minutes of productivity, with a 5-minute reward of free time. So now that we&rsquo;re up and running with our project folder, and our internet distractions are blocked, let&rsquo;s tell Automator to pause itself for the next 25 minutes:</p>
+
+<p>[Image: Pause for 25 minutes]</p>
+
+<p>Like a good little programmer, I&rsquo;m going to DRY up my workflow by putting my break time activites into a seperate workflow. Why? Because I can run one Automator workflow within another. I&rsquo;m building a workflow for Ruby/Rails work right now, but I might want to duplicate this and modify it for writing time, or maybe PHP/Wordpress development, etc. By making a &lsquo;Break Time&rsquo; workflow that these other workflows can run, I won&rsquo;t have to recreate that part of the chain every time. Plus if I decide to tweak what I allow myself on break, I only have to edit it once, and the primary workflows will respond accordingly.</p>
+
+<p>Here&rsquo;s what my five-minute break looks like:</p>
+
+<p>[Image: Break Time workflow]</p>
+
+<p>This is introducing some interesting interactions:</p>
+
+<ul>
+<li>When the break starts, make a sound (made possible by additional actions imported into my library from this website)</li>
+<li>Display a notification alerting me that it&rsquo;s now break time.</li>
+<li>Turn off Focus to allow distracting websites</li>
+<li>Launch Mail</li>
+<li>Open Reddit! Hooray!</li>
+<li>Pause for another five minutes</li>
+<li>Then play a sound again when the break is over</li>
+</ul>
+
+<p>Rolling this back into our primary workflow is easy enough, but now we&rsquo;ll also add an action called &lsquo;Ask for Confirmation&rsquo;, which offers to continue the chain (if I click the affirmative button), or abort the chain (if I click the negative). In our case, the next step in the chain is to loop back around to the start, at which point we start a new Pomodoro:</p>
+
+<p>[Image: Final Setup]</p>
+
+<p>You might notice that you can configure your Loop action to only loop a certain number of times. If you&rsquo;re really sticking to the Pomodoro Technique<sup>TM</sup>, you could use this to run through four pomodori before triggering your longer 15-30 minute break workflow. I&rsquo;ll leave it to implement that anyway you wish.</p>
+
+<h2>So Productive Right Now</h2>
+
+<p>So with that, we&rsquo;ve now got a very quick and easy way to not only get up and running with a project, but stay focused on it for 25 minutes at time, automatically give yourself a break, and repeat the cycle until you feel like stopping.</p>
+
+<p>Automator includes a pretty impressive library of actions that can be performed by a number of different apps, and there are even more you can download. I advise you to do some Googling and see what else is possible. You&rsquo;re already using the computer to do (mostly) interesting things, but with the combinations that are possible with Automator, your computer can do even more to help you than you probably realize. Make that computer your bitch. Or intern. Or tomato. Whatever tickles your fancy.</p>
+
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'iamjohnellis';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </section>
+  </div>
+
+    <footer><p>&copy; 2016 John Ellis. Peep this site on <a href="https://github.com/SeriouslyAwesome/iamjohnellis">Github</a>.</p></footer>
+
+    <script defer src="/js/min/plugins-min.js"></script>
+    <script defer src="/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
+</html>
+

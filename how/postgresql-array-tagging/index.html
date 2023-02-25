@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Auto-complete tagging with Rails, PostgreSQL arrays, and Chosen: A complete example. | John Ellis</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'dnq6tok',
+          scriptTimeout: 3000
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+  </head>
+
+  <body>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav id="nav-primary">
+      <h1><a href="/">John Ellis</a></h1>
+      <ul>
+        
+          <li >
+            <a href="/" data-alt="I Am">
+              Who
+              <span class="nav-subtitle">I Am</span>
+            </a>
+          </li>
+        
+          <li >
+            <a href="/what" data-alt="I've Done">
+              What
+              <span class="nav-subtitle">I've Done</span>
+            </a>
+          </li>
+        
+          <li >
+            <a href="/where" data-alt="To Find Me">
+              Where
+              <span class="nav-subtitle">To Find Me</span>
+            </a>
+          </li>
+        
+          <li  class="current">
+            <a href="/how" data-alt="to do stuff">
+              How
+              <span class="nav-subtitle">to do stuff</span>
+            </a>
+          </li>
+        
+      </ul>
+    </nav>
+
+
+  <div id="content">
+    <section class="clearfix">
+      <aside>
+        <h2 class="hero">Auto-complete tagging with Rails, PostgreSQL arrays, and Chosen: A complete example.</h2>
+        <h3 class="date"><time datetime="">November 13, 2014</time></h3>
+      </aside>
+
+      <div class="body">
+        <p>Sometimes, <a href="#" class="pizzazz" data-src="http://www.reactiongifs.com/r/2013/07/LolBitchPlease.gif">you just need to add tagging to a form on your website.</a> At work, we (<a href="http://frederickrangel.com">Freddy</a> and I) recently had to implement some tagging for fields that had a pre-defined list of options to choose from. Taking advantage of Rails 4.x&rsquo;s and PostgreSQL&rsquo;s native support for array-type columns, we were able to avoid the hassle of extra models, join tables, foreign keys, etc. We then used <a href="http://harvesthq.github.io/chosen/">Chosen.js</a> to make the UI clean and dead-simple.</p>
+
+<p>Here&rsquo;s how it all came together.</p>
+
+<h2>1. Let&rsquo;s add our column to the DB.</h2>
+
+<p>Let&rsquo;s start by adding a column to our <code>Person</code> model - we&rsquo;ll call it <code>states_visited</code>.</p>
+
+<pre><code class="language-bash">
+# in your console
+rails g migration add_states_visited_to_people
+</code></pre>
+
+<p>Open up that migration file and let&rsquo;s make it look like this:</p>
+
+<pre><code class="language-ruby">
+# db/migrate/XYZ_add_states_visited_to_people.rb
+class AddStatesVisitedToPeople < ActiveRecord::Migration
+  def change
+    add_column :people, :states_visited, :text, array: true, default: []
+  end
+end
+</code></pre>
+
+<p>And of course, run the migration: <code>rake db:migrate</code></p>
+
+<h2>2. Now set up the column in your strong parameters.</h2>
+
+<p>Because ActiveRecord now expects an array, we need to let strong_parameters know what to permit, so we&rsquo;ll tweak our <code>UsersController</code> like so:</p>
+
+<pre><code class="language-ruby">
+# app/controllers/people_controller.rb
+def person_params
+  params.require(:person).permit(:name, { states_visited: [] })
+end
+</code></pre>
+
+<p>The key bit here is <code>{ states_visited: [] }</code>, which gives <code>strong_parameters</code> a heads up that we&rsquo;re going to be submitting the data for that column as an array.</p>
+
+<h2>3. Set up your form helper</h2>
+
+<p>Actually, before we can do that, I&rsquo;m going to set up a constant that contains an <code>Array</code> of the names of the 50 United States of America to reference in our form helper a little later.</p>
+
+<pre><code class="language-ruby">
+# config/initializers/states.rb
+MURICA = ["Alabama", "Alaska", ..., "Wyoming"]
+</code></pre>
+
+<p>(You&rsquo;ll need to restart after you add this)</p>
+
+<p>Great. Now the semantic way to mark this up would be with a multiple-select tag - we have a list of options to select from, and you can select multiple options from that list. So lets do that.</p>
+
+<pre><code class="language-ruby">
+# app/views/people/show.html.erb
+<%= form_for @user do |f| %>
+    # stuff...
+    
+    <%= f.label :name, 'Your Name' %>
+    <%= f.input :name, placeholder: 'John/Jane Doe' %>
+    
+    <%= f.label :states_visited, 'States You\'ve Been To' %>
+    <%= f.select :states_visited, MURICA, {}, { multiple: true, class: 'taggable' } %>
+<% end %>
+</code></pre>
+
+<p>Believe it or not, that&rsquo;s all we need to get it working. But as far as I know, not a single person on earth enjoys using multiple-select fields when filling out a form, so we&rsquo;re going to style it up a bit. </p>
+
+<h2>4. Implement Chosen.js</h2>
+
+<p>Chosen is a great little jQuery plugin for easily and vastly improving the UI of your selects and multiple-selects. Since we&rsquo;re using Rails, we&rsquo;ll just add the <a href="https://github.com/tsechingho/chosen-rails"><code>chosen-rails</code> gem</a> to our gemfile and run <code>bundle</code> to install it, and then restart your app again.</p>
+
+<p>We&rsquo;ll also want to include it in our <code>application.js</code> manifest (I&rsquo;m using Coffeescript here):</p>
+
+<pre><code class="language-ruby">
+# app/assets/javascripts/application.js
+//= require chosen-jquery
+</code></pre>
+
+<p>And likewise to our stylesheet manifest:</p>
+
+<pre><code class="language-ruby">
+# app/assets/stylesheets/application.css
+*= require chosen
+</code></pre>
+
+<p>Now it&rsquo;s just a matter of initializing Chosen on our select elements, which we setup with a class of &ldquo;taggable&rdquo;:</p>
+
+<pre><code class="language-coffeescript">
+# app/assets/javascripts/forms.js
+jQuery ->
+  $('.taggable').chosen()
+</code></pre>
+
+<p>Well that was easy. I&rsquo;ll leave it to you to research the options available in the Chosen documentaiton, but with those two lines, we go from this:</p>
+
+<p><img src="/assets/demo_boring_select.png" alt="demo_boring_select"> </p>
+
+<p>&hellip;to this:</p>
+
+<p><img src="/assets/demo_exciting.png" alt="demo_exciting"> </p>
+
+<p>Now let&rsquo;s get our view to display our new fancy tags. You can do this in a similar way you might with any other standard Rails association:</p>
+
+<pre><code class="language-ruby">
+# app/views/people/show.html.erb
+<h2>Hi! My name is <%= @person.name %>!</h2>
+
+<h2>States I've Been To:</h2>
+<% if @person.states_visited.any? %>
+  <ul>
+    <% @person.states_visited.each do |state| %>
+      <li><%= state %></li>
+    <% end %>
+  </ul>
+<% end %>
+</code></pre>
+
+<h2>5. ???</h2>
+
+<p>But wait! There&rsquo;s a problem. The rails helper for multiple-select elements introduces a combination feature/bug that will complicate things a bit. Rails will add a hidden input just before your select tag that will explicitly set your <code>states_visited</code> attribute to <code>nil</code> in the event that you deselect any previously selected options. This is similar to Rails&rsquo; checkbox helper - HTML will not send form data for a given attribute if no options (or checkboxes) are selected (or checked). This hidden input forces the <code>nil</code> value to be sent with the form, thus updating your record appropriately.</p>
+
+<p>However, in this case, the hidden input is being included as an element in our array of <code>states_visited</code>, making the first entry in our list a big fat blank, regardless of other values. </p>
+
+<p><img src="/assets/demo_bug.png" alt="demo_bug"> </p>
+
+<p>To get around this, we&rsquo;re going to follow the advice gleaned from <a href="http://stackoverflow.com/questions/8929230/why-is-the-first-element-always-blank-in-my-rails-multi-select-using-an-embedde/9085554#9085554">this StackOverflow answer</a>, and set up a private method in our <code>ApplicationController</code> that will strip blank items from any array-type parameters before doing anything with the params:</p>
+
+<pre><code class="language-ruby">
+# app/controllers/application_controller.rb
+class ApplicationController < ActionController::Base
+  before_action :clean_select_multiple_params, only: [:create, :update]
+
+  # existing code...
+
+  private
+
+  # Used to strip blank first values from array-type params.
+  def clean_select_multiple_params hash = params
+    hash.each do |key, value|
+      case value
+      when Array then value.reject!(&:blank?)
+      when Hash then clean_select_multiple_params(value)
+      end
+    end
+  end
+end
+</code></pre>
+
+<p>This method loops through the params hash, checking if a given parameter is an <code>Array</code> or a <code>Hash</code> (for Postgres&rsquo;s h-store column types), and rejects any blank values contained therein.</p>
+
+<p>By putting this in <code>ApplicationController</code> and calling it in a <code>before_action</code> filter we&rsquo;re making it happen on any future controllers that have <code>#create</code> and <code>#update</code> methods. If we later decide we want to implement tagging on any other models, we won&rsquo;t have to worry about this feature/bug any more.</p>
+
+<p><em>(The other answers on SO seem to favor adding a similar method to our <code>Person</code> model. This would require duplicating that method in any other models that might utilize tagging. The way I see it, it&rsquo;s the controller&rsquo;s job to serve as the gatekeeper of data passing between the view and the model.)</em></p>
+
+<h2>6. Profit</h2>
+
+<p>Speaking of DRY, since we&rsquo;ve bound our Chosen.js initializer to anything with a class of &ldquo;taggable&rdquo;, you can now rinse and repeat steps 1, 2, and 3 on any additional columns you want, and fill your whole app with taggable inputs. <a href="http://harvesthq.github.io/chosen/">Chosen.js</a> offers great customizations involving grouped selects and more, so go check it out and customize to suit your needs.</p>
+
+<p>The full working code for <a href="https://github.com/SeriouslyAwesome/demo_array_tagging">this tutorial is available on GitHub</a>, and I encourage you to clone it and test it out for yourself.</p>
+
+<p>The end.</p>
+
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'iamjohnellis';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </section>
+  </div>
+
+    <footer><p>&copy; 2016 John Ellis. Peep this site on <a href="https://github.com/SeriouslyAwesome/iamjohnellis">Github</a>.</p></footer>
+
+    <script defer src="/js/min/plugins-min.js"></script>
+    <script defer src="/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
+</html>
+
